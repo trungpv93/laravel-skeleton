@@ -1,15 +1,20 @@
 <?php
 
-namespace App;
+namespace App\Entities;
 
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
-class User extends Authenticatable
+class User extends Authenticatable implements Transformable
 {
-    use Notifiable;
+	use Notifiable;
+    use TransformableTrait;
+    use EntrustUserTrait;
 
-    /**
+     /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -26,4 +31,5 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
 }
