@@ -7,6 +7,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\PermissionRepository;
 use App\Entities\Permission;
 use App\Validators\PermissionValidator;
+use DB;
 
 /**
  * Class PermissionRepositoryEloquent
@@ -25,10 +26,10 @@ class PermissionRepositoryEloquent extends BaseRepository implements PermissionR
     }
 
     /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
+     * Specify Validator class name
+     *
+     * @return mixed
+     */
     public function validator()
     {
 
@@ -42,5 +43,39 @@ class PermissionRepositoryEloquent extends BaseRepository implements PermissionR
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+    /**
+    * get permission_role by Role ID
+    *
+    * @param  string  $id
+    * @return \Illuminate\Database\Eloquent\Collection
+    */
+    public function getPermissionRoleByRoleID($id){
+        return DB::table('permission_role')->where('permission_role.role_id', $id)
+          ->lists('permission_role.permission_id', 'permission_role.permission_id');
+    }
+
+    /**
+    * get permission by Role ID
+    *
+    * @param  string  $id
+    * @return \Illuminate\Database\Eloquent\Collection
+    */
+    public function getPermissionByRoleID($id){
+        return Permission::join('permission_role', 'permission_role.permission_id', '=', 'permissions.id')
+          ->where('permission_role.role_id', $id)
+          ->get();
+    }
+
+    /**
+    * delete permission_role by Role ID
+    *
+    * @param  string  $id
+    * @return bool|null
+    */
+    public function deletePermissionRoleByRoleID($id){
+        return DB::table('permission_role')->where('permission_role.role_id', $id)
+          ->delete();
     }
 }

@@ -25,10 +25,10 @@ class RoleRepositoryEloquent extends BaseRepository implements RoleRepository
     }
 
     /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
+     * Specify Validator class name
+     *
+     * @return mixed
+     */
     public function validator()
     {
 
@@ -42,5 +42,18 @@ class RoleRepositoryEloquent extends BaseRepository implements RoleRepository
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+
+    /**
+     * get List Role By Permission ID
+     *
+     * @param  string  $id
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getRolesByPermissionID($id){
+        return Role::join('permission_role', 'permission_role.role_id', '=', 'roles.id')
+          ->where('permission_role.permission_id', $id)
+          ->get();
     }
 }

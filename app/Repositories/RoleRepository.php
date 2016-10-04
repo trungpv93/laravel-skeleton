@@ -10,5 +10,11 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface RoleRepository extends RepositoryInterface
 {
-    //
+	/**
+     * get List Role By Permission ID
+     *
+     * @param  string  $id
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+	public function getRolesByPermissionID($id);
 }

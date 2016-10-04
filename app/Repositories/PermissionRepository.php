@@ -10,5 +10,27 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface PermissionRepository extends RepositoryInterface
 {
-    //
+	/**
+    * get permission_role by Role ID
+    *
+    * @param  string  $id
+    * @return \Illuminate\Database\Eloquent\Collection
+    */
+	public function getPermissionRoleByRoleID($id);
+
+    /**
+    * delete permission_role by Role ID
+    *
+    * @param  string  $id
+    * @return bool|null
+    */
+    public function deletePermissionRoleByRoleID($id);
+
+	/**
+    * get permission by Role ID
+    *
+    * @param  string  $id
+    * @return \Illuminate\Database\Eloquent\Collection
+    */
+	public function getPermissionByRoleID($id);
 }
