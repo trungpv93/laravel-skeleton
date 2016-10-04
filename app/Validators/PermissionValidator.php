@@ -9,7 +9,14 @@ class PermissionValidator extends LaravelValidator
 {
 
     protected $rules = [
-        ValidatorInterface::RULE_CREATE => [],
-        ValidatorInterface::RULE_UPDATE => [],
+        ValidatorInterface::RULE_CREATE => [
+        	'name' => 'required|unique:permissions,name',
+          	'display_name' => 'required',
+          	'description' => 'required'
+        ],
+        ValidatorInterface::RULE_UPDATE => [
+          	'display_name' => 'required',
+          	'description' => 'required'
+        ],
    ];
 }

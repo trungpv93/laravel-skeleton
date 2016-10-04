@@ -10,4 +10,21 @@ class Role extends EntrustRole implements Transformable
 {
     use TransformableTrait;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'display_name', 'description',
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        
+    ];
 }
