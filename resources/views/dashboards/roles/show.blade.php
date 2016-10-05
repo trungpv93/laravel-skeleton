@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard')
 
 @section('CUSTOM_CSS')
     
@@ -22,7 +22,7 @@
                 <div class="panel-heading">
                     <a class="btn btn-success btn-sm" href="{{ route('roles.index') }}"><i class="fa fa-btn fa-arrow-left" aria-hidden="true"></i>Back</a>
                     <div class="pull-right">
-                        @permission('role-edit')
+                        @permission(('role-edit'))
                             <a class="btn btn-primary btn-sm" href="{{ route('roles.edit',$role->id) }}"><i class="fa fa-btn fa-pencil" aria-hidden="true"></i>Edit</a>
                         @endpermission
                     </div>

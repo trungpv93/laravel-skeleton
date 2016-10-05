@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard')
 
 @section('CUSTOM_CSS')
     
@@ -28,7 +28,7 @@
                 <div class="panel-heading" style="height: 51px;">
                     List Role
                     <div class="pull-right">
-                        @permission('role-create')
+                        @permission(('role-create'))
 			            <a class="btn btn-success btn-sm" href="{{ route('roles.create') }}"><i class="fa fa-btn fa-plus" aria-hidden="true"></i>Create New Role</a>
 			            @endpermission
                     </div>
@@ -49,10 +49,10 @@
 						<td>{{ $role->description }}</td>
 						<td>
 							<a class="btn btn-info btn-sm" href="{{ route('roles.show',$role->id) }}"><i class="fa fa-btn fa-eye" aria-hidden="true"></i>Show</a>
-							@permission('role-edit')
+							@permission(('role-edit'))
 							<a class="btn btn-primary btn-sm" href="{{ route('roles.edit',$role->id) }}"><i class="fa fa-btn fa-pencil" aria-hidden="true"></i>Edit</a>
 							@endpermission
-							@permission('role-delete')
+							@permission(('role-delete'))
 							{!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
 				            <button class="btn btn-danger btn-sm"><i class="fa fa-btn fa-trash-o" aria-hidden="true"></i>Delete</button>
 				        	{!! Form::close() !!}

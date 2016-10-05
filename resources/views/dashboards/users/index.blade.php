@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard')
 
 @section('CUSTOM_CSS')
 
@@ -29,7 +29,7 @@
 					List User 
 					<div class="pull-right">
                         <div class="btn-group">
-                            @permission('user-create')
+                            @permission(('user-create'))
 							<a class="btn btn-success btn-sm" href="{{ route('users.create') }}"><i class="fa fa-btn fa-plus" aria-hidden="true"></i>Create New</a>
 							@endpermission      
                         </div>
@@ -55,10 +55,10 @@
 						<td>{{ $user->last_online_at }}</td>
 						<td>
 							<a class="btn btn-info btn-sm" href="{{ route('users.show',$user->id) }}"><i class="fa fa-btn fa-eye" aria-hidden="true"></i>Show</a>
-							@permission('user-edit')
+							@permission(('user-edit'))
 							<a class="btn btn-primary btn-sm" href="{{ route('users.edit',$user->id) }}"><i class="fa fa-btn fa-pencil" aria-hidden="true"></i>Edit</a>
 							@endpermission
-							@permission('user-delete')
+							@permission(('user-delete'))
 							{!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
 				            <button class="btn btn-danger btn-sm"><i class="fa fa-btn fa-trash-o" aria-hidden="true"></i>Delete</button>
 				        	{!! Form::close() !!}

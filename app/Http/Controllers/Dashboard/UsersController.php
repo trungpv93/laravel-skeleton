@@ -11,6 +11,7 @@ use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Repositories\UserRepository;
+use App\Repositories\RoleRepository;
 use App\Validators\UserValidator;
 
 
@@ -23,14 +24,20 @@ class UsersController extends Controller
     protected $repository;
 
     /**
+    * @var RoleRepository
+    */
+    protected $repositoryRole;
+
+    /**
      * @var UserValidator
      */
     protected $validator;
 
-    public function __construct(UserRepository $repository, UserValidator $validator)
+    public function __construct(UserRepository $repository, UserValidator $validator, RoleRepository $repositoryRole)
     {
         $this->repository = $repository;
         $this->validator  = $validator;
+        $this->repositoryRole = $repositoryRole;
     }
 
 
@@ -51,8 +58,21 @@ class UsersController extends Controller
             ]);
         }
 
-        return view('users.index', compact('users'))->with('i', (request()->input('page', 1) - 1) * 10);
+        return view('dashboards.users.index', compact('users'))->with('i', (request()->input('page', 1) - 1) * 10);
     }
+
+    /**
+    * Show the form for creating a new resource.
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function create()
+    {
+        $role = $this->repositoryRole->all();
+
+        return view('dashboards.users.create', compact('role'));
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -104,6 +124,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = $this->repository->find($id);
+        $userRoles = $this->repositoryRole->getRolesByUserID($id);
 
         if (request()->wantsJson()) {
 
@@ -112,7 +133,7 @@ class UsersController extends Controller
             ]);
         }
 
-        return view('users.show', compact('user'));
+        return view('dashboards.users.show', compact('user', 'userRoles'));
     }
 
 
@@ -127,8 +148,10 @@ class UsersController extends Controller
     {
 
         $user = $this->repository->find($id);
+        $role = $this->repositoryRole->all();
+        $userRoles = $this->repositoryRole->getRoleUserByUserID($id);
 
-        return view('users.edit', compact('user'));
+        return view('dashboards.users.edit', compact('user', 'role', 'userRoles'));
     }
 
 

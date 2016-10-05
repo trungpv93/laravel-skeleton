@@ -7,6 +7,7 @@ use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\RoleRepository;
 use App\Entities\Role;
 use App\Validators\RoleValidator;
+use DB;
 
 /**
  * Class RoleRepositoryEloquent
@@ -55,5 +56,28 @@ class RoleRepositoryEloquent extends BaseRepository implements RoleRepository
         return Role::join('permission_role', 'permission_role.role_id', '=', 'roles.id')
           ->where('permission_role.permission_id', $id)
           ->get();
+    }
+
+     /**
+     * get List Role By User ID
+     *
+     * @param  string  $id
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+	public function getRolesByUserID($id){
+        return Role::join('role_user', 'role_user.role_id', '=', 'roles.id')
+        ->where('role_user.user_id', $id)
+        ->get();
+    }
+
+    /**
+     * get List role_user By User ID
+     *
+     * @param  string  $id
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+	public function getRoleUserByUserID($id){
+        return DB::table('role_user')->where('role_user.user_id', $id)
+        ->pluck('role_user.role_id', 'role_user.role_id')->all();
     }
 }

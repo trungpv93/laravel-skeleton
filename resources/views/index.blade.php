@@ -1,28 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
+@section('CUSTOM_CSS')
+    <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
                 height: 100vh;
                 margin: 0;
             }
 
             .full-height {
-                height: 100vh;
+                height: 70vh;
             }
 
             .flex-center {
@@ -63,16 +52,14 @@
                 margin-bottom: 30px;
             }
         </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
-                </div>
-            @endif
+@endsection
 
+@section('CUSTOM_JS')
+
+@endsection
+
+@section('CONTENT')
+    <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
@@ -86,6 +73,6 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+    </div>
+@endsection
+
