@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.dashboard')
 
 @section('CUSTOM_CSS')
     
@@ -28,7 +28,7 @@
                 <div class="panel-heading" style="height: 51px;">
                     List Permission
                     <div class="pull-right">
-                    	@permission('permission-create')
+                    	@permission(('permission-create'))
 			            <a class="btn btn-success btn-sm" href="{{ route('permissions.create') }}"><i class="fa fa-btn fa-plus" aria-hidden="true"></i>Create New Permission</a>
 			            @endpermission    
                     </div>
@@ -49,10 +49,10 @@
 						<td>{{ $permission->description }}</td>
 						<td>
 							<a class="btn btn-info btn-sm" href="{{ route('permissions.show',$permission->id) }}"><i class="fa fa-btn fa-eye" aria-hidden="true"></i>Show</a>
-							@permission('permission-edit')
+							@permission(('permission-edit'))
 							<a class="btn btn-primary btn-sm" href="{{ route('permissions.edit',$permission->id) }}"><i class="fa fa-btn fa-pencil" aria-hidden="true"></i>Edit</a>
 							@endpermission
-							@permission('permission-delete')
+							@permission(('permission-delete'))
 							{!! Form::open(['method' => 'DELETE','route' => ['permissions.destroy', $permission->id],'style'=>'display:inline']) !!}
 				            <button class="btn btn-danger btn-sm"><i class="fa fa-btn fa-trash-o" aria-hidden="true"></i>Delete</button>
 				        	{!! Form::close() !!}

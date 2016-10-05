@@ -26,6 +26,7 @@ class PermissionsController extends Controller
      * @var RoleRepository
      */
     protected $repositoryRole;
+
     /**
      * @var PermissionValidator
      */
@@ -56,7 +57,7 @@ class PermissionsController extends Controller
             ]);
         }
 
-        return view('permissions.index', compact('permissions'))->with('i', (request()->input('page', 1) - 1) * 10);
+        return view('dashboards.permissions.index', compact('permissions'))->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**
@@ -66,7 +67,7 @@ class PermissionsController extends Controller
     */
     public function create()
     {
-        return view('permissions.create');
+        return view('dashboards.permissions.create');
     }
 
     /**
@@ -128,7 +129,7 @@ class PermissionsController extends Controller
             ]);
         }
 
-        return view('permissions.show', compact('permission', 'permissionRoles'));
+        return view('dashboards.permissions.show', compact('permission', 'permissionRoles'));
     }
 
 
@@ -144,7 +145,7 @@ class PermissionsController extends Controller
 
         $permission = $this->repository->find($id);
 
-        return view('permissions.edit', compact('permission'));
+        return view('dashboards.permissions.edit', compact('permission'));
     }
 
 

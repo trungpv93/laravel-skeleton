@@ -53,7 +53,7 @@ class PermissionRepositoryEloquent extends BaseRepository implements PermissionR
     */
     public function getPermissionRoleByRoleID($id){
         return DB::table('permission_role')->where('permission_role.role_id', $id)
-          ->lists('permission_role.permission_id', 'permission_role.permission_id');
+          ->pluck('permission_role.permission_id', 'permission_role.permission_id')->all();
     }
 
     /**

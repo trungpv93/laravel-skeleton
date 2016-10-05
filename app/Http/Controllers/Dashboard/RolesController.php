@@ -58,7 +58,7 @@ class RolesController extends Controller
             ]);
         }
 
-        return view('roles.index', compact('roles'))->with('i', (request()->input('page', 1) - 1) * 10);
+        return view('dashboards.roles.index', compact('roles'))->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**
@@ -70,7 +70,7 @@ class RolesController extends Controller
     {
         $permission = $this->repositoryPermission->all();
 
-        return view('roles.create', compact('permission'));
+        return view('dashboards.roles.create', compact('permission'));
     }
 
     /**
@@ -136,7 +136,7 @@ class RolesController extends Controller
             ]);
         }
 
-        return view('roles.show', compact('role', 'rolePermissions'));
+        return view('dashboards.roles.show', compact('role', 'rolePermissions'));
     }
 
 
@@ -154,7 +154,7 @@ class RolesController extends Controller
         $permission = $this->repositoryPermission->all();
         $rolePermissions = $this->repositoryPermission->getPermissionRoleByRoleID($id);
 
-        return view('roles.edit', compact('role', 'permission', 'rolePermissions'));
+        return view('dashboards.roles.edit', compact('role', 'permission', 'rolePermissions'));
     }
 
 

@@ -1,0 +1,23 @@
+/* ============================== App ================================*/
+.fa-btn {
+    margin-right: 6px;
+}
+
+hr {
+    border-top: 1px solid rgb(199, 199, 199);
+}
+
+footer {
+    margin: 3em 0;
+}
+footer li {
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+}
+footer p {
+    clear: left;
+    margin-bottom: 0;
+}
+
+/* ============================== ./ App ================================*/
