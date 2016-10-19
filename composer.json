@@ -10,7 +10,8 @@
         "trungpv93/l5-repository": "^2.6",
         "zizaco/entrust": "5.2.x-dev",
         "anhskohbo/no-captcha": "^2.1",
-        "laravelcollective/html": "5.3.*"
+        "laravelcollective/html": "5.3.*",
+        "nesbot/carbon": "^1.21"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -1,6 +1,8 @@
 {
-  "css/admin.css": "css/admin-63cc60c02d.css",
-  "css/app.css": "css/app-2210f482d3.css",
-  "js/admin.js": "js/admin-ac0573d7cd.js",
-  "js/app.js": "js/app-e6dfcbe52a.js"
+  "css/all.css": "css/all-5ef0891e8c.css",
+  "css/auth.css": "css/auth-4152ae263e.css",
+  "css/default.css": "css/default-f199602f98.css",
+  "js/all.js": "js/all-9cfb4d3c2e.js",
+  "js/auth.js": "js/auth-7fdf8d13ce.js",
+  "js/default.js": "js/default-07a26f6d97.js"
 }
