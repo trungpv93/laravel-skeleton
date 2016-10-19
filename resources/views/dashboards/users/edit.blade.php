@@ -1,34 +1,54 @@
 @extends('layouts.dashboard')
 
-@section('CUSTOM_CSS')
-    
+@section('CSS')
+    <link href="{{ elixir('css/default.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
 @endsection
 
-@section('CUSTOM_JS')
+@section('JS')
+    <script src="{{ elixir('js/default.js') }}"></script>
 
-@endsection
-
-@section('before_container')
-
+    <!-- Custom JS -->
+    <script type="text/javascript">
+        $(function () {
+            @if ($message = Session::get('message'))
+                @if($isError = Session::get('error'))
+                    toastr.error('{{ $message }}');
+                @else
+                    toastr.success('{{ $message }}');
+                @endif
+            @endif
+        });
+    </script>
 @endsection
 
 @section('CONTENT')
-<div id="page-wrapper" style="min-height: 396px;">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Edit User</h1>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <a class="btn btn-success btn-sm" href="{{ route('users.index') }}"><i class="fa fa-btn fa-arrow-left" aria-hidden="true"></i>Back</a>
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Edit User <em>{{ $user->email }}</em>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{{ url('/users') }}"><i class="fa fa-users"></i> Users</a></li>
+        <li class="active">Edit User <em>{{ $user->email }}</em></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <a class="btn btn-success btn-sm" href="{{ route('users.show', $user->id) }}"><i class="fa fa-btn fa-arrow-left" aria-hidden="true"></i>Back</a>
                 </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
+                <!-- /.box-header -->
+                {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
+                <div class="box-body">
+                   
                     <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group{{ $errors->has('current_password') ? ' has-error' : '' }}">
@@ -112,16 +132,19 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary "><i class="fa fa-btn fa-floppy-o" aria-hidden="true"></i>Save</button>
-                        </div>
                     </div>
-                    {!! Form::close() !!}
                 </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
+                <!-- /.box-body -->
+
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary "><i class="fa fa-btn fa-floppy-o" aria-hidden="true"></i>Save</button>
+                </div>
+                {!! Form::close() !!}
+          </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
 @endsection

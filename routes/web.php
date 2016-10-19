@@ -11,15 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-	return view('index');
-});
-
 Auth::routes();
 
 //Dashboard
 Route::group(['middleware' => ['auth']], function () {
-	Route::get('/dashboard', ['as' =>'dashboard', 'uses' => 'HomeController@index', 'middleware' => ['role:admin']]);
+	Route::get('/', ['as' =>'dashboard', 'uses' => 'HomeController@index', 'middleware' => ['role:admin']]);
 
   //Role
 	Route::get('roles', ['as' => 'roles.index', 'uses' => 'Dashboard\RolesController@index', 'middleware' => ['permission:role-list|role-create|role-edit|role-delete']]);

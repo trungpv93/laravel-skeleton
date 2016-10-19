@@ -1,61 +1,82 @@
 @extends('layouts.dashboard')
 
-@section('CUSTOM_CSS')
-    
+@section('CSS')
+    <link href="{{ elixir('css/default.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
 @endsection
 
-@section('CUSTOM_JS')
+@section('JS')
+    <script src="{{ elixir('js/default.js') }}"></script>
 
-@endsection
-
-@section('before_container')
-
+    <!-- Custom JS -->
+    <script type="text/javascript">
+        $(function () {
+            @if ($message = Session::get('message'))
+                @if($isError = Session::get('error'))
+                    toastr.error('{{ $message }}');
+                @else
+                    toastr.success('{{ $message }}');
+                @endif
+            @endif
+        });
+    </script>
 @endsection
 
 @section('CONTENT')
-<div id="page-wrapper" style="min-height: 396px;">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">User <em>{{ $user->email }}</em></h1>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        User <em>{{ $user->email }}</em>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{{ url('/users') }}"><i class="fa fa-users"></i> Users</a></li>
+        <li class="active">User <em>{{ $user->email }}</em></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+            <div class="box box-primary">
+                <div class="box-header with-border">
                     <a class="btn btn-success btn-sm" href="{{ route('users.index') }}"><i class="fa fa-btn fa-arrow-left" aria-hidden="true"></i>Back</a>
                     <div class="pull-right">
-                        @permission(('user-edit'))
-                         <a class="btn btn-primary btn-sm" href="{{ route('users.edit',$user->id) }}"><i class="fa fa-btn fa-pencil" aria-hidden="true"></i>Edit</a>
-                        @endpermission
-                    </div>
+                        <div class="btn-group">
+                            @permission(('user-edit'))
+                            <a class="btn btn-primary btn-sm" href="{{ route('users.edit',$user->id) }}"><i class="fa fa-btn fa-pencil" aria-hidden="true"></i>Edit</a>
+                            @endpermission
+                        </div>
+                     </div>
                 </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
+                <!-- /.box-header -->
+                <div class="box-body">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Name:</strong>
-                                {!! Form::text('name', $user->name, array('placeholder' => 'Name','class' => 'form-control', 'disabled' => 'disabled')) !!}
+                                {{ $user->name }}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>User Name:</strong>
-                                {!! Form::text('username', $user->username, array('placeholder' => 'User Name','class' => 'form-control', 'disabled' => 'disabled')) !!}
+                                {{ $user->username }}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Email:</strong>
-                                {!! Form::text('email', $user->email, array('placeholder' => 'Email','class' => 'form-control', 'disabled' => 'disabled')) !!}
+                                {{ $user->email }}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Last online at:</strong>
-                                {!! Form::text('last_online_at', $user->last_online_at, array('placeholder' => 'Last online','class' => 'form-control', 'disabled' => 'disabled')) !!}
+                                {{ \Carbon\Carbon::createFromTimeStamp(strtotime($user->last_online_at))->format('d/m/Y H:i A') }}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -70,11 +91,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-</div>
+                <!-- /.box-body -->
+          </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 @endsection
