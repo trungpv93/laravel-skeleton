@@ -7,6 +7,32 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/trungpv/git/laravel-projects/laradock/docker-compose.yml",
+			"settings":
+			{
+				"buffer_size": 7921,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/trungpv/git/laravel-projects/crud/app/Http/Controllers/MaterialController.php",
+			"settings":
+			{
+				"buffer_size": 3699,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/trungpv/N/Bien Nho - Khanh Ly/Bài hát: Gọi Tên Bốn Mùa",
+			"settings":
+			{
+				"buffer_size": 1142,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -15,7 +41,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 400.0,
 		"last_filter": "pac",
 		"selected_items":
 		[
@@ -24,7 +50,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 521.0
+		"width": 601.0
 	},
 	"console":
 	{
@@ -45,14 +71,68 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/trungpv/git/laravel-skeleton"
+		"/Users/trungpv/git/crudbooster",
+		"/Users/trungpv/git/laravel-generator"
 	],
 	"file_history":
 	[
+		"/Users/trungpv/git/laravel-projects/crudV1/config/app.php",
+		"/Users/trungpv/git/laravel-projects/crud/composer.json",
+		"/Users/trungpv/git/laravel-projects/crud/.env",
+		"/Users/trungpv/N/Bien Nho - Khanh Ly/Bài hát: Gọi Tên Bốn Mùa",
+		"/Users/trungpv/git/laravel-projects/laradock/docker-compose.yml",
+		"/Users/trungpv/git/laravel-projects/crudV1/.env",
+		"/Users/trungpv/git/laravel-projects/crud/app/Providers/RouteServiceProvider.php",
+		"/Users/trungpv/git/laravel-projects/crud/config/app.php",
+		"/Users/trungpv/git/crudbooster/src/CRUDBoosterServiceProvider.php",
+		"/Users/trungpv/git/crudbooster/src/controllers/ModulsController.php",
+		"/Users/trungpv/git/crudbooster/src/controllers/CBHook.php",
+		"/Users/trungpv/git/crudbooster/src/controllers/CBController.php",
+		"/Users/trungpv/git/crudbooster/src/database/migrations/2016_08_07_154624_add_table_cms_moduls.php",
+		"/Users/trungpv/git/crudbooster/src/database/migrations/2016_08_07_154802_add_table_cms_moduls_group.php",
+		"/Users/trungpv/git/crudbooster/src/controllers/AdminController.php",
+		"/Users/trungpv/git/laravel/homnaynghegi/sftp-config.json",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/roles/index.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/roles/create.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/roles/show.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/permissions/create.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/permissions/index.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/permissions/show.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/users/edit.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/users/show.blade.php",
+		"/Users/trungpv/git/laclong/resources/views/users/edit.blade.php",
+		"/Users/trungpv/git/laclong/resources/views/users/show.blade.php",
+		"/Users/trungpv/git/laclong/resources/views/users/create.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/users/create.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboard.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/app/Http/Controllers/Dashboard/UsersController.php",
+		"/Users/trungpv/git/laclong/resources/views/users/index.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/dashboards/users/index.blade.php",
+		"/Users/trungpv/git/laclong/gulpfile.js",
+		"/Users/trungpv/git/laravel-skeleton/gulpfile.js",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/layouts/dashboard.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/layouts/dashboard-old.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/.gitignore",
+		"/Users/trungpv/git/soundcloud-follow/manifest.json",
+		"/Users/trungpv/git/soundcloud-follow/js/background.js",
+		"/Users/trungpv/git/soundcloud-follow/js/jquery.min.js",
+		"/Users/trungpv/git/gmail-chrome-extension-boilerplate/manifest.json",
+		"/Users/trungpv/git/gmail-chrome-extension-boilerplate/main.js",
+		"/Users/trungpv/git/gmail-chrome-extension-boilerplate/jquery.min.js",
+		"/Users/trungpv/git/gmail-chrome-extension-boilerplate/content.js",
+		"/Users/trungpv/git/soundcloud-follow/scripts/background.js",
+		"/Users/trungpv/git/soundcloud-follow/scripts/contentscript.js",
+		"/Users/trungpv/git/soundcloud-follow/_locales/en/messages.json",
+		"/Users/trungpv/git/soundcloud-follow/styles/main.css",
+		"/Users/trungpv/git/laravel-skeleton/resources/views/auth/login.blade.php",
+		"/Users/trungpv/git/laclong/resources/views/layouts/dashboard.blade.php",
+		"/Users/trungpv/git/laravel-skeleton/app/Http/Controllers/Auth/RegisterController.php",
+		"/Users/trungpv/git/laravel-skeleton/routes/web.php",
+		"/Users/trungpv/git/laravel-skeleton/app/Http/Controllers/Auth/LoginController.php"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -66,6 +146,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"vo",
+			"# ",
+			"Lạc Long",
+			"]-->\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -73,6 +157,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Laravel"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -83,18 +168,338 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/trungpv/git/laravel-projects/laradock/docker-compose.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7921,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7249,
+								7249
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/trungpv/git/laravel-projects/crud/app/Http/Controllers/MaterialController.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 529.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/trungpv/N/Bien Nho - Khanh Ly/Bài hát: Gọi Tên Bốn Mùa",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1142
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 23.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -125,13 +530,13 @@
 	},
 	"output.sftp":
 	{
-		"height": 0.0
+		"height": 100.0
 	},
 	"pinned_build_system": "",
 	"project": "laravel-skeleton.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -166,7 +571,7 @@
 	{
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 252.0,

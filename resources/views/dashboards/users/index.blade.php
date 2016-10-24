@@ -85,13 +85,13 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ \Carbon\Carbon::createFromTimeStamp(strtotime($user->last_online_at))->format('d/m/Y h:i A') }}</td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="{{ route('users.show',$user->id) }}"><i class="fa fa-btn fa-eye" aria-hidden="true"></i>Show</a>
+                                <a class="btn btn-info btn-sm" href="{{ route('users.show',$user->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 @permission(('user-edit'))
-                                <a class="btn btn-primary btn-sm" href="{{ route('users.edit',$user->id) }}"><i class="fa fa-btn fa-pencil" aria-hidden="true"></i>Edit</a>
+                                <a class="btn btn-warning btn-sm" href="{{ route('users.edit',$user->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                 @endpermission
                                 @permission(('user-delete'))
                                 {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                                <button class="btn btn-danger btn-sm"><i class="fa fa-btn fa-trash-o" aria-hidden="true"></i>Delete</button>
+                                <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 {!! Form::close() !!}
                                 @endpermission
                             </td>

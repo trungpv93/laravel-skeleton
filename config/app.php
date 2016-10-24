@@ -186,6 +186,7 @@ return [
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
     ],
 
     /*
