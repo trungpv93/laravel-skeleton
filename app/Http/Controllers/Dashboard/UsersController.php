@@ -13,6 +13,7 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Repositories\UserRepository;
 use App\Repositories\RoleRepository;
 use App\Validators\UserValidator;
+use Hash;
 
 
 class UsersController extends Controller
@@ -62,17 +63,16 @@ class UsersController extends Controller
     }
 
     /**
-    * Show the form for creating a new resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         $role = $this->repositoryRole->all();
 
         return view('dashboards.users.create', compact('role'));
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -85,10 +85,9 @@ class UsersController extends Controller
     {
 
         try {
-
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
-
-            $user = $this->repository->create($request->all());
+            
+            $user = $this->repository->createUserWithRole($request->all());
 
             $response = [
                 'message' => 'User created.',
@@ -170,19 +169,34 @@ class UsersController extends Controller
 
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
-            $user = $this->repository->update($request->all(), $id);
+            $user = $this->repository->find($id);
 
-            $response = [
-                'message' => 'User updated.',
-                'data'    => $user->toArray(),
-            ];
+            if (Hash::check($request->input('current_password'), $user->password)) {
+                 $user = $this->repository->updateUserWithRole($request->all(), $user);
 
-            if ($request->wantsJson()) {
+                $response = [
+                    'message' => 'User updated.'
+                ];
 
-                return response()->json($response);
+                if ($request->wantsJson()) {
+
+                    return response()->json($response);
+                }
+
+                return redirect()->back()->with('message', $response['message']);
+            }else{
+                $response = [
+                        'error'   => true,
+                        'message' => 'The current password field is not match.'
+                ];
+
+                if ($request->wantsJson()) {
+
+                    return response()->json($response);
+                }
+
+                return redirect()->back()->withErrors(['current_password' => 'The current password field is not match.'])->with($response)->withInput();
             }
-
-            return redirect()->back()->with('message', $response['message']);
         } catch (ValidatorException $e) {
 
             if ($request->wantsJson()) {
@@ -193,7 +207,10 @@ class UsersController extends Controller
                 ]);
             }
 
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return redirect()->back()->withErrors($e->getMessageBag())->with([
+                    'error'   => true,
+                    'message' => 'Whoops! There were some problems with your input.'
+                ])->withInput();
         }
     }
 
