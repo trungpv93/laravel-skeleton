@@ -43,7 +43,7 @@
 
 			<div class="box box-primary">
 				<div class="box-header with-border">
-                    <a class="btn btn-success btn-sm" href="{{ route('permissions.show', $permission->id) }}"><i class="fa fa-btn fa-arrow-left" aria-hidden="true"></i>Back</a>
+                    <a class="btn btn-info btn-sm" href="{{ route('permissions.show', $permission->id) }}"><i class="fa fa-btn fa-arrow-left" aria-hidden="true"></i>Back</a>
 				</div>
 				<!-- /.box-header -->
 				{!! Form::model($permission, ['method' => 'PATCH','route' => ['permissions.update', $permission->id]]) !!}

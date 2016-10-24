@@ -82,6 +82,9 @@
 						<td>{{ $permission->description }}</td>
 						<td>
 							<a class="btn btn-sm btn-info" href="{{ route('permissions.show',$permission->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            @permission(('permission-edit'))
+                                <a class="btn btn-warning btn-sm" href="{{ route('permissions.edit',$permission->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                @endpermission
 							@permission(('permission-delete'))
 							{!! Form::open(['method' => 'DELETE','route' => ['permissions.destroy', $permission->id],'style'=>'display:inline']) !!}
 				            <button type="button" id="btnDelete" class="btn btn-sm btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>

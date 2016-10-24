@@ -82,6 +82,9 @@
 						<td>{{ $role->description }}</td>
 						<td>
 							<a class="btn btn-sm btn-info" href="{{ route('roles.show',$role->id) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                            @permission(('role-edit'))
+                                <a class="btn btn-warning btn-sm" href="{{ route('roles.edit',$role->id) }}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                @endpermission
 							@permission(('role-delete'))
 							{!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
 				            <button type="button" id="btnDelete" class="btn btn-sm btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
